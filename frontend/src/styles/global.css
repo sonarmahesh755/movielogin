@@ -1,0 +1,285 @@
+:root {
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background: #141414;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #141414;
+  color: #fff;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.auth-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.85)),
+    url("https://images.unsplash.com/photo-1489599511211-4f6f6f0a53da?auto=format&fit=crop&w=1600&q=80") center/cover;
+  filter: saturate(0.8);
+}
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  width: min(420px, 92vw);
+  background: rgba(20, 20, 20, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 2rem;
+  backdrop-filter: blur(4px);
+}
+
+.auth-card h1 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.auth-card form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.auth-card label {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.auth-card input {
+  border: none;
+  border-radius: 4px;
+  padding: 0.8rem;
+  background: #2b2b2b;
+  color: #fff;
+}
+
+.auth-card form > button {
+  margin-top: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  padding: 0.8rem;
+  background: #e50914;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link-btn {
+  border: none;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.error {
+  color: #ff8e8e;
+  margin: 0.2rem 0;
+}
+
+.home-shell {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  background: #141414;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem 3vw;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+}
+
+.brand {
+  color: #e50914;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06rem;
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 520px;
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search button,
+.user-actions button,
+.hero-buttons button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+}
+
+.search button,
+.user-actions button {
+  background: #e50914;
+  color: #fff;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.hero {
+  min-height: 64vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+  padding: 3rem 3vw;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-content h1 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.hero-content p {
+  margin-bottom: 1rem;
+  max-width: 60ch;
+  color: #ececec;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.hero-buttons .play {
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+}
+
+.hero-buttons .more {
+  background: rgba(109, 109, 110, 0.7);
+  color: #fff;
+}
+
+.movie-row {
+  margin-top: 1.2rem;
+  padding: 0 3vw;
+}
+
+.movie-row h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.35rem;
+}
+
+.cards {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(170px, 1fr);
+  gap: 0.8rem;
+  overflow-x: auto;
+  padding-bottom: 0.8rem;
+}
+
+.movie-card {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 255px;
+  background: #222;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.06);
+  z-index: 2;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0));
+  padding: 1rem 0.6rem 0.5rem;
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.overlay p {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #d7d7d7;
+}
+
+.banner {
+  padding: 0.6rem 3vw;
+}
+
+@media (max-width: 860px) {
+  .top-nav {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    order: 3;
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero {
+    min-height: 48vh;
+  }
+
+  .movie-card {
+    min-height: 220px;
+  }
+}
